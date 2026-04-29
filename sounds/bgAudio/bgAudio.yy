@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"bgAudio",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":31.384466,
+  "exportDir":"",
+  "name":"bgAudio",
+  "parent":{
+    "name":"sound",
+    "path":"folders/sound.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"bgAudio.ogg",
+  "volume":1.0,
+}

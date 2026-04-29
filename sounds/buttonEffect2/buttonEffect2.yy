@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"buttonEffect2",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.8640136,
+  "exportDir":"",
+  "name":"buttonEffect2",
+  "parent":{
+    "name":"sound",
+    "path":"folders/sound.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"buttonEffect2.mp3",
+  "volume":1.0,
+}

@@ -1,0 +1,1 @@
+audio_play_sound(bgAudio,10,true);

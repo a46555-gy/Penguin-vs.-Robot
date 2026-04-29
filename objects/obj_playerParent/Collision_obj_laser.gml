@@ -1,0 +1,2 @@
+playerScore--;
+respawn = true;

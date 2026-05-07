@@ -5,7 +5,7 @@ if(!dead){
 	image_speed = 0;
 
 	if(keyboard_check(ord(left_key))) {
-		if(!audio_is_playing(penguinWalk))
+		if(!audio_is_playing(penguinWalk) && grounded)
 		{
 			audio_play_sound(penguinWalk,10,false);
 		}
@@ -15,7 +15,7 @@ if(!dead){
 		right = false;
 	}
 	else if(keyboard_check(ord(right_key))) {
-		if(!audio_is_playing(penguinWalk))
+		if(!audio_is_playing(penguinWalk) && grounded)
 		{
 			audio_play_sound(penguinWalk,10,false);
 		}
@@ -58,22 +58,41 @@ if(!dead){
 		image_index = 2;
 	}
 
-	if(keyboard_check_pressed(ord("P")) && itemCount != 0) 
-	{
-		audio_play_sound(shootSnow,10,false);
-		bullet = instance_create_depth(x,y,-100,obj_bullets);
-		if(right)
+	if (keyboard_check_pressed(ord("R")) && itemCount != 0) {
+	    audio_play_sound(shootSnow, 10, false);
+	    bullet = instance_create_depth(x, y, -100, obj_bullets);
+		if(!instance_exists(obj_shield))
 		{
-			bullet.sprite_index = rightSnow;
-			bullet.dir = 1;
+			instance_create_depth(x,y,-100,obj_shield);
+			laserHit = false;
 		}
-		else
-		{
-			bullet.sprite_index = leftSnow;
-			bullet.dir = -1;
-		}
-	
-		itemCount--;
+
+	    if (right) {
+	        bullet.sprite_index = rightSnow;
+	        bullet.dir = 1;
+	    } else {
+	        bullet.sprite_index = leftSnow;
+	        bullet.dir = -1;
+	    }
+
+	    if (itemCount == 1) {
+	        bullet.spd = 8;
+	        bullet.image_xscale = 1;
+	        bullet.image_yscale = 1;
+			itemCount--;
+	    } else if (itemCount == 2) {
+	        bullet.spd = 15;
+	        bullet.image_xscale = 1.5;
+	        bullet.image_yscale = 1.5;
+			itemCount-=2;
+	    } else if (itemCount == 3) {
+	        bullet.spd = 20;
+	        bullet.image_xscale = 2.5;
+	        bullet.image_yscale = 2.5;
+			itemCount-=3;
+	    }
+
+	    
 	}
 }
 

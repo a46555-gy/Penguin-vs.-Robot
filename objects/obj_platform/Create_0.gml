@@ -1,4 +1,8 @@
-spd = 0;
-dir = 0; // 1 = moving right, -1 = moving left
-image_speed = 0;
-stepped = false;
+active = false;
+blinking = false;
+blink_show = true;
+blink_timer = 0;
+solid = false;
+sprite_index = spr_unactivePlatform;
+
+alarm[0] = 180;

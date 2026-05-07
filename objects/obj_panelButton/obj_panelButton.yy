@@ -9,8 +9,8 @@
   "name":"obj_panelButton",
   "overriddenProperties":[],
   "parent":{
-    "name":"PenguinVsRobot by Alice Yoon",
-    "path":"PenguinVsRobot by Alice Yoon.yyp",
+    "name":"panelSprites",
+    "path":"folders/panelSprites.yy",
   },
   "parentObjectId":null,
   "persistent":false,

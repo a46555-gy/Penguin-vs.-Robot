@@ -5,7 +5,7 @@ if(!dead)
 	image_speed = 0;
 
 	if(keyboard_check(vk_left)) {
-		if(!audio_is_playing(robotWalk) && playSound)
+		if(!audio_is_playing(robotWalk) && playSound  && grounded)
 		{
 			audio_play_sound(robotWalk,10,false);
 			playSound = false;
@@ -18,7 +18,7 @@ if(!dead)
 	}
 
 	else if(keyboard_check(vk_right)) {
-		if(!audio_is_playing(robotWalk) && playSound)
+		if(!audio_is_playing(robotWalk) && playSound && grounded)
 		{
 			audio_play_sound(robotWalk,10,false);
 			playSound = false;
@@ -64,23 +64,34 @@ if(!dead)
 		image_index = 1;
 	}
 
-	if(keyboard_check_pressed(vk_space) && itemCount != 0) 
-	{
-		audio_play_sound(shootLaser,10,false);
-		bullet = instance_create_depth(x,y,-100,obj_bullets);
+	if (keyboard_check_pressed(vk_space) && itemCount != 0) {
+	    audio_play_sound(shootLaser, 10, false);
+	    bullet = instance_create_depth(x, y, -100, obj_bullets);
+	    bullet.sprite_index = robotBullet;
 
-		bullet.sprite_index = robotBullet;
-	
-		if(right)
-		{
-			bullet.dir = 1;
-		}
-		else
-		{
-			bullet.dir = -1;
-		}
-	
-		itemCount--;
+	    if (right) {
+	        bullet.dir = 1;
+	    } else {
+	        bullet.dir = -1;
+	    }
+
+	    if (itemCount == 1) {
+	        bullet.spd = 8;
+	        bullet.image_xscale = 1;
+	        bullet.image_yscale = 1;
+			itemCount--;
+	    } else if (itemCount == 2) {
+	        bullet.spd = 15;
+	        bullet.image_xscale = 1.5;
+	        bullet.image_yscale = 1.5;
+			itemCount-=2;
+	    } else if (itemCount == 3) {
+	        bullet.spd = 20;
+	        bullet.image_xscale = 2.5;
+	        bullet.image_yscale = 2.5;
+			itemCount-=3;
+	    }
+
 	}
 }
 

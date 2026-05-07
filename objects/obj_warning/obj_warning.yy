@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"warningPointer",
-    "path":"sprites/warningPointer/warningPointer.yy",
+    "name":"warningPointer1",
+    "path":"sprites/warningPointer1/warningPointer1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

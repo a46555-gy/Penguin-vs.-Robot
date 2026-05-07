@@ -1,5 +1,5 @@
 image_speed = 0;
-itemCount = 0;
+itemCount = 3;
 right = false;
 
 var bullet = noone;
